@@ -1,4 +1,4 @@
-from pypdf import PdfReader
+from PyPDF2 import PdfReader
 
 class PDFparser:
     """
@@ -23,10 +23,10 @@ class PDFparser:
             
             reader = PdfReader(filename)
             self.pages = len(reader.pages)
-            self.text = {filename: {ix: page.extract_text for ix, page in enumerate(reader.pages)}}
+            self.text[filename] = {ix: page.extract_text() for ix, page in enumerate(reader.pages)}
         
 
-    def sample(self, page=1, lines=10):
+    def sample(self, page=1, lines=100):
         print(self.filename[0])
         print(self.text[self.filename[0]][page][:lines])
 
