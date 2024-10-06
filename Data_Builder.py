@@ -7,4 +7,6 @@ parser = PDFparser()
 for pdf in PDFDIR.glob('*.pdf'):
     parser.parse(pdf)
 
-parser.sample()
+# parser.sample()
+
+

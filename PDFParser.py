@@ -20,7 +20,8 @@ class PDFparser:
 
         if filename:
             self.filename.append(filename)
-            reader = PdfReader(self.filename)
+            
+            reader = PdfReader(filename)
             self.pages = len(reader.pages)
             self.text = {filename: {ix: page.extract_text for ix, page in enumerate(reader.pages)}}
         
