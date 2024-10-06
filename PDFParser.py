@@ -12,7 +12,7 @@ class PDFparser:
         else: 
             self.filename = []
         self.pages = None
-        self.text = None
+        self.text = {}
 
     def parse(self, filename=None):
         if self.filename:
